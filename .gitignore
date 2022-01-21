@@ -1,0 +1,10 @@
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+PublishProfiles
+.vs/RetailMarketing/DesignTimeBuild
+.vs/RetailMarketing/v17
+.vs/RetailMarketing/project-colors.json

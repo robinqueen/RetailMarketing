@@ -1,0 +1,50 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<RadzenButton Text="This is a radzenbutton"></RadzenButton>
+
+<div>
+
+@foreach(var housingProp in housingProperties)
+{
+    <div>
+        <RadzenLabel Text=@housingProp.AddressLine1 />
+
+    </div>
+}
+
+
+</div>
+
+
+
+
+
+<h2>Multicol</h2>
+
+<div class="wrapper multicol">
+  <p>The first ascent, made in June from the Paris Observatory, though a lofty one, was attended with so much danger and confusion as to be barren of results. The departure, owing to stormy weather, was hurried and illordered, so that the velocity in rising was excessive, the net constricted the rapidly-swelling globe, and the volumes of out-rushing gas half-suffocated the voyagers. Then a large rent occurred, which caused an alarmingly rapid fall, and the two philosophers were reduced to the necessity of flinging away all they possessed, their instruments only excepted. The landing, in a vineyard, was happily not attended with disaster, and within a month the same two colleagues attempted a second aerial excursion, again in wet weather.</p>
+</div>
+
+
+<h2>Flexbox</h2>
+<div class="wrapper flex">
+  <div>A</div>
+  <div>B</div>
+  <div>C</div>
+  <div>D</div>  
+</div>
+
+
+<h2>Grid</h2>
+<div class="wrapper grid">
+  <div>A</div>
+  <div>B</div>
+  <div>C</div>
+  <div>D</div>  
+</div>
