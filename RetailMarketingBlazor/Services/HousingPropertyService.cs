@@ -19,13 +19,19 @@ namespace RetailMarketingBlazor.Services
             try
             {
                 var apiResponse = await httpClient.GetStreamAsync($"https://apifreelance.azurewebsites.net/HousingProperty/GetAllHousingProperties");
-                return await JsonSerializer.DeserializeAsync<List<HousingProperty>>
+                var response = await JsonSerializer.DeserializeAsync<List<HousingProperty>>
                                     (apiResponse, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
 
+                if(response is null)
+                {
+                    response = new List<HousingProperty>();
+                }
+
+                return response;
             }
-            catch (Exception ex)
+            catch
             {
-                throw ex;
+                throw;
             }
 
         }

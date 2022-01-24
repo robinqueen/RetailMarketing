@@ -2,24 +2,83 @@
 
 <PageTitle>Index</PageTitle>
 
+
+
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
 <RadzenButton Text="This is a radzenbutton"></RadzenButton>
 
-<div>
+        <div  style="background: #FFF url('images/scattered-forcefields.svg') repeat top center; background-size: cover; min-width:300px; min-height:300px;">
+            <div>
+                <p>This might be text onop of image</p>
+            </div>
+            </div>
 
-@foreach(var housingProp in housingProperties)
+            <br />
+            <br />
+
+
+              <div class="d-flex justify-content-center position-relative">
+                        <div class="" style="background-image: url('images/developer.svg'); background-size: cover; background-position: center center;">
+                        
+                            </div>
+                            </div>
+
+
+                            <br />
+                            <br />
+                            <div class="col-md-4">
+                                <div class="card d-flex align-items-end flex-column p-4 border-0"    style="background-color: #C2DFEC;">
+                                    <div class="mt-5"></div>
+                                    <div class="mt-auto">
+                                        <div class="card-body">
+                                            <img src="images/social.svg" alt="Image" class="mb-4" height="50">
+                                            <h3 class="card-title fw-bolder">Card Header</h3>
+                                            <p class="card-text mb-0 mt-2 fw-light"> Text  Test.  </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+@if(loadingProperties)
 {
-    <div>
-        <RadzenLabel Text=@housingProp.AddressLine1 />
+    <div class="wrapper flex">
 
-    </div>
-}
 
+
+    @foreach (var housingProp in housingProperties)
+    {
+                        <img src="data:image/bmp;base64, @(Convert.ToBase64String(housingProp.MainImage))"/>
+
+        <RadzenCard>
+            @*Make the main div be an image of the house, overlay the price on the image. Clickable image will open up a dialog of lot information*@
+            <div>
+                <RadzenLabel Text=@housingProp.AddressLine1 />
+
+                @*Make the type div a banner flag overlaying the top of the card stating its "RENTING" or "SELLING"*@
+                <div>
+                    <p>@housingProp.PropertyType</p>
+                </div>
+            </div>
+
+        </RadzenCard>
+    }
+    
 
 </div>
+}
+else
+{
+     <div>
+         <div>
+             <p>Loading Housing Properties...</p>
+         </div>
+     </div>
+}
+
 
 
 
@@ -28,23 +87,23 @@ Welcome to your new app.
 <h2>Multicol</h2>
 
 <div class="wrapper multicol">
-  <p>The first ascent, made in June from the Paris Observatory, though a lofty one, was attended with so much danger and confusion as to be barren of results. The departure, owing to stormy weather, was hurried and illordered, so that the velocity in rising was excessive, the net constricted the rapidly-swelling globe, and the volumes of out-rushing gas half-suffocated the voyagers. Then a large rent occurred, which caused an alarmingly rapid fall, and the two philosophers were reduced to the necessity of flinging away all they possessed, their instruments only excepted. The landing, in a vineyard, was happily not attended with disaster, and within a month the same two colleagues attempted a second aerial excursion, again in wet weather.</p>
+    <p>The first ascent, made in June from the Paris Observatory, though a lofty one, was attended with so much danger and confusion as to be barren of results. The departure, owing to stormy weather, was hurried and illordered, so that the velocity in rising was excessive, the net constricted the rapidly-swelling globe, and the volumes of out-rushing gas half-suffocated the voyagers. Then a large rent occurred, which caused an alarmingly rapid fall, and the two philosophers were reduced to the necessity of flinging away all they possessed, their instruments only excepted. The landing, in a vineyard, was happily not attended with disaster, and within a month the same two colleagues attempted a second aerial excursion, again in wet weather.</p>
 </div>
 
 
 <h2>Flexbox</h2>
 <div class="wrapper flex">
-  <div>A</div>
-  <div>B</div>
-  <div>C</div>
-  <div>D</div>  
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
 </div>
 
 
 <h2>Grid</h2>
 <div class="wrapper grid">
-  <div>A</div>
-  <div>B</div>
-  <div>C</div>
-  <div>D</div>  
+    <div>A</div>
+    <div>B</div>
+    <div>C</div>
+    <div>D</div>
 </div>

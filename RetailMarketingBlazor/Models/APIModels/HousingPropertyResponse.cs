@@ -12,5 +12,41 @@
         public string Zipcode { get; set; }
         public int LeaseLength { get; set; }
         public string LeaseType { get; set; }
+
+        public byte[] MainImage { get; set; }
+
+        
+        public List<HouseImages> HouseImages { get; set; } = new List<HouseImages>();
+
     }
+
+    public class HouseImages
+    {
+        public int HouseID { get; set; }
+
+        public ImageLocationType Type { get; set; }
+        public byte[] ImageFile { get; set; } 
+
+        public string ImageFilePath { get; set; }
+        
+        public enum ImageLocationType
+        {
+            Main,
+            Yard,
+            Porch,
+            Deck,
+            Livingroom,
+            Bedroom,
+            Office,
+            Kitchen,
+            Utility,
+            MasterBedroom,
+            Bathroom,
+            MasterBathroom,
+            Other
+
+        }
+    }
+
+    
 }
